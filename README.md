@@ -20,14 +20,11 @@ y ejecutar "source .bashrc"
 
 El comando para ver el versículo es "versiculo", y debe ejecutar así:
 
-lgnr@lgnr-debian:~/Cosas de la Unción/Biblia/versiculoaleatorio$ versiculo
-
-Ester Capítulo 3 Versículo 10:
-
-
-Entonces el rey quitó el
-anillo de su mano, y lo dio a
-Amán hijo de Hamedata agagueo,
-enemigo de los judíos,
+lgnr@lgnr-debian:~/Cosas de la Unción/Biblia/versiculo$ versiculo 
+Salmos Capítulo 92 Versículo 12:
+ 
+El justo florecerá como la
+palmera; Crecerá como cedro en
+el Líbano.
 
 Y el programa elige cualquiera. Porciones que pueden ser versículos no populares, incluso de las genealogías. Por lo que Dios debe iluminar su entendimiento, para la interpretación, de conceptos así, si se usa, como Guía y Como Palabra, en Todo.

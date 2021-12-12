@@ -16,6 +16,7 @@ export PATH="$PATH:path/to/versiculoaleatorio en .bashrc
 
 y ejecutar "source .bashrc"
 
+<\br>
 
 El comando para ver el versículo es "versiculo", y debe ejecutar así:
 

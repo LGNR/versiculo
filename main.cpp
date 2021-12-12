@@ -1,3 +1,6 @@
+/*** VERSICULO ALEATORIO EN ESPAÑOL, REINA VALERA 1960 ***/
+/*** LUIS G. NAVARRO, 2021                             ***/
+
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -33,7 +36,11 @@ std::string wrap(const char *text, size_t line_length = 72)
     return wrapped.str();
 }
 
+// Código wrap de https://www.rosettacode.org/wiki/Word_wrap#C.2B.2B
+
 int main(){
+
+   // Por manuales de rapidXML, código construido sin tomar de otros lugares
    ifstream myfile("/etc/versiculoaleatorio/Reina-Valera-1960.xmm");
    rapidxml::xml_document<> doc;
    int i,j,k=0;
@@ -53,6 +60,7 @@ int main(){
    rapidxml::xml_node<> *pRoot = doc.first_node();
    //cout << "Prueba de Lectura de Archivo Bíblico \n";
    
+   
    // Conteo de Capítulos y Versículos
  
    i=0;
@@ -65,37 +73,47 @@ int main(){
       //rapidxml::xml_attribute<> *pAttr = pBook->first_attribute("n");
       pBook-> append_attribute(doc.allocate_attribute("i", number_i));
       //cout << "Libro número " << pBook->first_attribute("i")->value() << ": " << pBook->first_attribute("n")->value() << "\n";
+      //cout << pBook->first_attribute("i")->value() << ", " << pBook->first_attribute("n")->value() << ", ";
       j=0;
       for(rapidxml::xml_node<> *pChap=pBook->first_node("c"); pChap; pChap=pChap->next_sibling())
       {
          j++;
          //cout << "Capítulo " << pChap->first_attribute("n")->value() ; 
+         //cout << pChap->first_attribute("n")->value()<<", ";
          k=0;
          for(rapidxml::xml_node<> *pVerse=pChap->first_node("v"); pVerse; pVerse=pVerse->next_sibling())
          {
             k++;
          }
          
-         std::string conv_j = std::to_string(k);
-         const char * number_k = conv_j.c_str();
+         std::string conv_k = std::to_string(k);
+         const char * number_k = conv_k.c_str();
          pChap-> append_attribute(doc.allocate_attribute("count", number_k));
          //cout << " con " << pChap->first_attribute("count")->value() <<" versículos \n";
          max_k[i][j]=k;
          //cout << "Versículos, Libro: " << i << " Capítulo: " << j << " :" << max_k[i][j] << "\n";
+         //cout << pBook->first_attribute("i")->value() << ", " << pBook->first_attribute("n")->value() << ", ";
+         //cout << pChap->first_attribute("n")->value()<<", ";
+         //cout << k <<"\n";
       }
-      std::string conv_k = std::to_string(j);
-      const char * number_j = conv_k.c_str();
+      std::string conv_j = std::to_string(j);
+      const char * number_j = conv_j.c_str();
       pBook-> append_attribute(doc.allocate_attribute("count", number_j));
       max_j[i]=j;
       //cout << "Total de Capítulos: " << pBook->first_attribute("count")->value() <<"\n";
       //cout << "Capítulos: " << max_j[i] <<"\n";
    }
    
-   // Imprimir maximos en CSV
+
+   // Imprimir maximos en CSV: archivo sacado de terminal
 
    // Cargar máximos de archivo para el sistema.
    
+   // TODO: Cargar para variables de máximos.
 
+
+
+   // Código de Foros, para usar el /dev/urandom
    unsigned long long int random_value_i = 0; //Declare value to store data into
    size_t size_i = sizeof(random_value_i); //Declare size of data
    ifstream urandom_i("/dev/urandom", ios::in|ios::binary); //Open stream
@@ -234,7 +252,7 @@ int main(){
     // cout << " con " << j << " capítulos \n";
     // Do something here
    
-    
+   
     
 
 }

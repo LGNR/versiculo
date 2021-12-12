@@ -8,20 +8,16 @@ Ejecutar cmake .
 
 Ejecutar make
 
-<br />
 Copiar el archivo a "Reina-Valera-1960.xmm" a "/etc/versiculoaleatorio/.", y cambiar dueño con chown del archivo al usuario que utilice el programa.
-<br />
-Dar de alta con 
-export PATH="$PATH:path/to/versiculoaleatorio
-en .bashrc
-y ejecutar
-source .bashrc
 
-<br />
+Dar de alta con 
+
+export PATH="$PATH:path/to/versiculoaleatorio en .bashrc
+
+y ejecutar "source .bashrc"
+
 
 El comando para ver el versículo es "versiculo", y debe ejecutar así:
-
-<br />
 
 lgnr@lgnr-debian:~/Cosas de la Unción/Biblia/versiculoaleatorio$ versiculo
 

@@ -15,8 +15,10 @@ source .bashrc
 El comando para ver el versículo es "versiculo", y debe ejecutar así:
 
 lgnr@lgnr-debian:~/Cosas de la Unción/Biblia/versiculoaleatorio$ versiculo
+
 Ester Capítulo 3 Versículo 10:
- 
+
+
 Entonces el rey quitó el
 anillo de su mano, y lo dio a
 Amán hijo de Hamedata agagueo,

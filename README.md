@@ -2,7 +2,10 @@
 Da un versículo aleatorio de la Reina Valera 1960
 <br />
 # Instalación
-Crear directorio "versiculoaleatorio", para clonar este repositorio
+Clonar el respositorio
+Ejecutar cmake .
+Ejecutar make
+
 <br />
 Copiar el archivo a "Reina-Valera-1960.xmm" a "/etc/versiculoaleatorio/.", y cambiar dueño con chown del archivo al usuario que utilice el programa.
 <br />

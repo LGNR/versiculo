@@ -21,6 +21,8 @@ y ejecutar "source .bashrc"
 El comando para ver el versículo es "versiculo", y debe ejecutar así:
 
 lgnr@lgnr-debian:~/Cosas de la Unción/Biblia/versiculo$ versiculo 
+
+
 Salmos Capítulo 92 Versículo 12:
  
 El justo florecerá como la

@@ -4,15 +4,15 @@ Da un versículo aleatorio de la Reina Valera 1960
 # Instalación
 Clonar el respositorio
 
-Ejecutar cmake .
+Ejecutar "cmake ."
 
-Ejecutar make
+Ejecutar "make"
 
 Copiar el archivo a "Reina-Valera-1960.xmm" a "/etc/versiculoaleatorio/.", y cambiar dueño con chown del archivo al usuario que utilice el programa.
 
 Dar de alta con 
 
-export PATH="$PATH:path/to/versiculoaleatorio en .bashrc
+"export PATH="$PATH:path/to/versiculoaleatorio" en .bashrc
 
 y ejecutar "source .bashrc"
 

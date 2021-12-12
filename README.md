@@ -3,7 +3,9 @@ Da un versículo aleatorio de la Reina Valera 1960
 <br />
 # Instalación
 Clonar el respositorio
+
 Ejecutar cmake .
+
 Ejecutar make
 
 <br />

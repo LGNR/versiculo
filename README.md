@@ -29,3 +29,5 @@ Entonces el rey quitó el
 anillo de su mano, y lo dio a
 Amán hijo de Hamedata agagueo,
 enemigo de los judíos,
+
+Y el programa elige cualquiera. Porciones que pueden ser versículos no populares, incluso de las genealogías. Por lo que Dios debe iluminar su entendimiento, para la interpretación, de conceptos así, si se usa, como Guía y Como Palabra, en Todo.

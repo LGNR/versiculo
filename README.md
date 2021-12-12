@@ -4,7 +4,7 @@ Da un versículo aleatorio de la Reina Valera 1960
 # Instalación
 Crear directorio "versiculoaleatorio", para clonar este repositorio
 <br />
-Copiar el archivo a "Reina-Valera-1960.xmm" "/etc/versiculoaleatorio/.", y cambiar dueño del archivo al usuario que utilice el programa.
+Copiar el archivo a "Reina-Valera-1960.xmm" a "/etc/versiculoaleatorio/.", y cambiar dueño con chown del archivo al usuario que utilice el programa.
 <br />
 Dar de alta con 
 export PATH="$PATH:path/to/versiculoaleatorio

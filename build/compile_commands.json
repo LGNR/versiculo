@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/lgnr/Cosas de la Unción/Biblia/versiculo/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-10  -I\"/home/lgnr/Cosas de la Unción/Biblia/versiculo/rapidxml\" -g -Wall -o CMakeFiles/versiculo.dir/main.cpp.o -c \"/home/lgnr/Cosas de la Unción/Biblia/versiculo/main.cpp\"",
+  "file": "/home/lgnr/Cosas de la Unción/Biblia/versiculo/main.cpp"
+}
+]

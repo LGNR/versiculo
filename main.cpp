@@ -1,5 +1,8 @@
-/*** VERSICULO ALEATORIO EN ESPAÑOL, REINA VALERA 1960 ***/
-/*** LUIS G. NAVARRO, 2021                             ***/
+/*** VERSICULO ALEATORIO EN ESPAÑOL, REINA VALERA 1960   ***/
+/*** LUIS G. NAVARRO, 2021                               ***/
+/*** Para la Gloria del Dios Grandísimo, al Únicio Digno ***/
+/*** de todo nuestro tiempo, y nuestra vida.             ***/
+
 
 #include <iostream>
 #include <sstream>
@@ -41,7 +44,8 @@ std::string wrap(const char *text, size_t line_length = 72)
 int main(){
 
    // Por manuales de rapidXML, código construido sin tomar de otros lugares
-   ifstream myfile("/etc/versiculoaleatorio/Reina-Valera-1960.xmm");
+   // Se puede hacer lo que es lectura desde la línea de comandos
+   ifstream myfile("/etc/versiculoaleatorio/RVR1960.xmm");
    rapidxml::xml_document<> doc;
    int i,j,k=0;
    int rand_i; int rand_j; int rand_k;
@@ -110,6 +114,7 @@ int main(){
    // Cargar máximos de archivo para el sistema.
    
    // TODO: Cargar para variables de máximos.
+   // Puede ser innecesario, desde que los máximos se tengan desde el Texto en XML
 
 
 

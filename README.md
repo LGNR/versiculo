@@ -2,7 +2,7 @@
 Da un versículo aleatorio de la Reina Valera 1960
 <br />
 # Instalación
-Clonar el respositorio
+Clonar el respositorio, en carpeta "versiculo/", puede ser en la carpeta de usuario personal.
 
 Ejecutar "cmake ."
 
@@ -12,7 +12,7 @@ Copiar el archivo a "RVR1960.xmm" a "/etc/versiculo/.", y cambiar dueño con cho
 
 Dar de alta con 
 
-"export PATH="$PATH:path/to/versiculoaleatorio" en .bashrc
+"export PATH="$PATH:path/to/versiculo/" en .bashrc
 
 y ejecutar "source .bashrc"
 

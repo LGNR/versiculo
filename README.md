@@ -8,7 +8,7 @@ Ejecutar "cmake ."
 
 Ejecutar "make"
 
-Copiar el archivo a "Reina-Valera-1960.xmm" a "/etc/versiculoaleatorio/.", y cambiar dueño con chown del archivo al usuario que utilice el programa.
+Copiar el archivo a "RVR1960.xmm" a "/etc/versiculo/.", y cambiar dueño con chown del archivo al usuario que utilice el programa.
 
 Dar de alta con 
 

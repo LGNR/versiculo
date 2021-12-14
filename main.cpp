@@ -43,9 +43,12 @@ std::string wrap(const char *text, size_t line_length = 72)
 
 int main(){
 
+   // Incorporar por terminal o por archivo de configuración
+   // la elección de la versión Bíblica
+
    // Por manuales de rapidXML, código construido sin tomar de otros lugares
    // Se puede hacer lo que es lectura desde la línea de comandos
-   ifstream myfile("/etc/versiculoaleatorio/RVR1960.xmm");
+   ifstream myfile("/etc/versiculo/RVR1960.xmm");
    rapidxml::xml_document<> doc;
    int i,j,k=0;
    int rand_i; int rand_j; int rand_k;
@@ -115,8 +118,6 @@ int main(){
    
    // TODO: Cargar para variables de máximos.
    // Puede ser innecesario, desde que los máximos se tengan desde el Texto en XML
-
-
 
    // Código de Foros, para usar el /dev/urandom
    unsigned long long int random_value_i = 0; //Declare value to store data into

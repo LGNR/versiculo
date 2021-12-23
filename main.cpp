@@ -48,7 +48,7 @@ int main(){
 
    // Por manuales de rapidXML, código construido sin tomar de otros lugares
    // Se puede hacer lo que es lectura desde la línea de comandos
-   ifstream myfile("/etc/versiculo/RVR1960.xmm");
+   ifstream myfile("/etc/versiculo/TLA.xmm");
    rapidxml::xml_document<> doc;
    int i,j,k=0;
    int rand_i; int rand_j; int rand_k;
@@ -70,46 +70,46 @@ int main(){
    
    // Conteo de Capítulos y Versículos
  
-   i=0;
-   for(rapidxml::xml_node<> *pBook=pRoot->first_node("b"); pBook; pBook=pBook->next_sibling())
-   {
-      i++;
-      std::string conv_i = std::to_string(i);
-      const char * number_i = conv_i.c_str();
-      // This loop will walk you through two nodes:
-      //rapidxml::xml_attribute<> *pAttr = pBook->first_attribute("n");
-      pBook-> append_attribute(doc.allocate_attribute("i", number_i));
-      //cout << "Libro número " << pBook->first_attribute("i")->value() << ": " << pBook->first_attribute("n")->value() << "\n";
-      //cout << pBook->first_attribute("i")->value() << ", " << pBook->first_attribute("n")->value() << ", ";
-      j=0;
-      for(rapidxml::xml_node<> *pChap=pBook->first_node("c"); pChap; pChap=pChap->next_sibling())
-      {
-         j++;
-         //cout << "Capítulo " << pChap->first_attribute("n")->value() ; 
-         //cout << pChap->first_attribute("n")->value()<<", ";
-         k=0;
-         for(rapidxml::xml_node<> *pVerse=pChap->first_node("v"); pVerse; pVerse=pVerse->next_sibling())
-         {
-            k++;
-         }
-         
-         std::string conv_k = std::to_string(k);
-         const char * number_k = conv_k.c_str();
-         pChap-> append_attribute(doc.allocate_attribute("count", number_k));
-         //cout << " con " << pChap->first_attribute("count")->value() <<" versículos \n";
-         max_k[i][j]=k;
-         //cout << "Versículos, Libro: " << i << " Capítulo: " << j << " :" << max_k[i][j] << "\n";
-         //cout << pBook->first_attribute("i")->value() << ", " << pBook->first_attribute("n")->value() << ", ";
-         //cout << pChap->first_attribute("n")->value()<<", ";
-         //cout << k <<"\n";
-      }
-      std::string conv_j = std::to_string(j);
-      const char * number_j = conv_j.c_str();
-      pBook-> append_attribute(doc.allocate_attribute("count", number_j));
-      max_j[i]=j;
-      //cout << "Total de Capítulos: " << pBook->first_attribute("count")->value() <<"\n";
-      //cout << "Capítulos: " << max_j[i] <<"\n";
-   }
+    i=0;
+    for(rapidxml::xml_node<> *pBook=pRoot->first_node("b"); pBook; pBook=pBook->next_sibling())
+    {
+        i++;
+        std::string conv_i = std::to_string(i);
+        const char * number_i = conv_i.c_str();
+        // This loop will walk you through two nodes:
+        //rapidxml::xml_attribute<> *pAttr = pBook->first_attribute("n");
+        pBook-> append_attribute(doc.allocate_attribute("i", number_i));
+        //cout << "Libro número " << pBook->first_attribute("i")->value() << ": " << pBook->first_attribute("n")->value() << "\n";
+        //cout << pBook->first_attribute("i")->value() << ", " << pBook->first_attribute("n")->value() << ", ";
+        j=0;
+        for(rapidxml::xml_node<> *pChap=pBook->first_node("c"); pChap; pChap=pChap->next_sibling())
+        {
+            j++;
+            //cout << "Capítulo " << pChap->first_attribute("n")->value() ; 
+            //cout << pChap->first_attribute("n")->value()<<", ";
+            k=0;
+            for(rapidxml::xml_node<> *pVerse=pChap->first_node("v"); pVerse; pVerse=pVerse->next_sibling())
+            {
+                k++;
+            }
+            
+            std::string conv_k = std::to_string(k);
+            const char * number_k = conv_k.c_str();
+            pChap-> append_attribute(doc.allocate_attribute("count", number_k));
+            //cout << " con " << pChap->first_attribute("count")->value() <<" versículos \n";
+            max_k[i][j]=k;
+            //cout << "Versículos, Libro: " << i << " Capítulo: " << j << " :" << max_k[i][j] << "\n";
+            //cout << pBook->first_attribute("i")->value() << ", " << pBook->first_attribute("n")->value() << ", ";
+            //cout << pChap->first_attribute("n")->value()<<", ";
+            //cout << k <<"\n";
+        }
+        std::string conv_j = std::to_string(j);
+        const char * number_j = conv_j.c_str();
+        pBook-> append_attribute(doc.allocate_attribute("count", number_j));
+        max_j[i]=j;
+        //cout << "Total de Capítulos: " << pBook->first_attribute("count")->value() <<"\n";
+        //cout << "Capítulos: " << max_j[i] <<"\n";
+    }
    
 
    // Imprimir maximos en CSV: archivo sacado de terminal
@@ -184,34 +184,42 @@ int main(){
     }
    
 
-   srand(time(NULL));
+    srand(time(NULL));
 
-   
-      rand_i=(random_value_i+10000*rand()) % 66; // Máximo 66
-      if (rand_i == 0)
-         do 
-         {
+    rand_i=(random_value_i+10000*rand()) % 66; // Máximo 66
+    cout << rand_i << "\n";
+    if (rand_i == 0)
+    {
+        cout << rand_i << "\n";    
+        do 
+        {
             rand_i=(random_value_i+10000*rand()) % 66;
-         }
-         while (rand_i == 0);
-      //cout << rand_i << "\n";
-      rand_j=(random_value_j+10000*rand()) % (max_j[rand_i]); // Máximo 150
-      if (rand_j == 0)
-         do
-         {
+            cout << rand_i << "\n";
+        }
+        while (rand_i == 0);
+    }
+    rand_j=(random_value_j+10000*rand()) % (max_j[rand_i]); // Máximo 150
+    cout << rand_i << "\n";
+    if (rand_j == 0)
+    {
+        do
+        {
             rand_j=(random_value_j+10000*rand()) % (max_j[rand_i]);
-         }
-         while (rand_j == 0);
-      //cout << rand_j << "\n";
-      rand_k=(random_value_k+10000*rand()) % (max_k[rand_i][rand_j]); // Máximo 176
-      if (rand_k == 0)
-         do
-         {  
+        }
+        while (rand_j == 0);
+    }
+    cout << rand_j << "\n";
+    rand_k=(random_value_k+10000*rand()) % (max_k[rand_i][rand_j]); // Máximo 176
+    cout << rand_k << "\n";
+    if (rand_k == 0)
+    {
+        do
+        {  
             rand_k=(random_value_k+10000*rand()) % (max_k[rand_i][rand_j]);
-         }
-         while (rand_k == 0);
-
-      //cout << rand_k << "\n";
+        }
+        while (rand_k == 0);
+    }
+    cout << rand_k << "\n";
       
   
 

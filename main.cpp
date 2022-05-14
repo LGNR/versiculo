@@ -3,6 +3,22 @@
 /*** Para la Gloria del Dios Grandísimo, al Únicio Digno ***/
 /*** de todo nuestro tiempo, y nuestra vida.             ***/
 
+/*** Lo que mueva indignamente lo aleatorio, sea anatema 
+ eterno... En lo más sencillo, de la verdad, más sencilla
+ y la ciertamente anhelada, sin importar nada.
+ Si no es con la verdad anhelada, deben morir
+ todos los Cristos, hasta el Muerto del Evangelio.
+ Declaratoria de pérdida de poder, para lo que mueva
+ mal esto, como es indigno de Hasta del Salmo 139 cristiano
+ y Bíblico, que conoce ciertamente Todo ***/
+
+/* 1240 como no entendimos */
+/* Rhema Sobre Rhema, hasta entender lo Grandísimo */
+/* "Intersistema" Sellado */
+
+/* Ningún Nivel Puede prohibir la lectura Bíblica por instrucción
+cuando hay necesidad grande de la Palabra, ya sólo en situaciones
+básicas de no lectura */
 
 #include <iostream>
 #include <sstream>
@@ -41,35 +57,42 @@ std::string wrap(const char *text, size_t line_length = 72)
 
 // Código wrap de https://www.rosettacode.org/wiki/Word_wrap#C.2B.2B
 
-int main(){
+int main()
+{
 
-   // Incorporar por terminal o por archivo de configuración
-   // la elección de la versión Bíblica
+    int i,j,k=0;
+    int rand_i; int rand_j; int rand_k;
+    int max_k[67][151];
+    int max_j[67];
+    // Incorporar por terminal o por archivo de configuración
+    // la elección de la versión Bíblica
 
-   // Por manuales de rapidXML, código construido sin tomar de otros lugares
-   // Se puede hacer lo que es lectura desde la línea de comandos
-   ifstream myfile("/etc/versiculo/TLA.xmm");
-   rapidxml::xml_document<> doc;
-   int i,j,k=0;
-   int rand_i; int rand_j; int rand_k;
-   int max_k[67][151];
-   int max_j[67];
-   /* "Read file into vector<char>"  See linked thread above*/
-   vector<char> buffer((istreambuf_iterator<char>(myfile)), istreambuf_iterator<char>( ));
+    // Por manuales de rapidXML, código construido sin tomar de otros lugares
+    // Se puede hacer lo que es lectura desde la línea de comandos
 
-   buffer.push_back('\0');
+    
 
-   //cout<<&buffer[0]<<endl; /*test the buffer */
+    ifstream myfile("/etc/versiculo/RVR1960.xmm");
+    rapidxml::xml_document<> doc;
+    
 
-   doc.parse<0>(&buffer[0]); 
 
-   //cout << "Name of my first node is: " << doc.first_node()->name() << "\n";  /*test the xml_document */
-   rapidxml::xml_node<> *pRoot = doc.first_node();
-   //cout << "Prueba de Lectura de Archivo Bíblico \n";
-   
-   
-   // Conteo de Capítulos y Versículos
- 
+    // "Read file into vector<char>"  See linked thread above 
+    vector<char> buffer((istreambuf_iterator<char>(myfile)), istreambuf_iterator<char>( ));
+
+    buffer.push_back('\0');
+
+    //cout<<&buffer[0]<<endl; // test the buffer 
+
+    doc.parse<0>(&buffer[0]); 
+
+    //cout << "Name of my first node is: " << doc.first_node()->name() << "\n";  // test the xml_document 
+    rapidxml::xml_node<> *pRoot = doc.first_node();
+    //cout << "Prueba de Lectura de Archivo Bíblico \n";
+
+
+    // Conteo de Capítulos y Versículos
+
     i=0;
     for(rapidxml::xml_node<> *pBook=pRoot->first_node("b"); pBook; pBook=pBook->next_sibling())
     {
@@ -111,6 +134,7 @@ int main(){
         //cout << "Capítulos: " << max_j[i] <<"\n";
     }
    
+    
 
    // Imprimir maximos en CSV: archivo sacado de terminal
 
@@ -187,41 +211,44 @@ int main(){
     srand(time(NULL));
 
     rand_i=(random_value_i+10000*rand()) % 66; // Máximo 66
-    cout << rand_i << "\n";
+    //cout << rand_i << "\n";
     if (rand_i == 0)
     {
-        cout << rand_i << "\n";    
+        //cout << rand_i << "\n";    
         do 
         {
             rand_i=(random_value_i+10000*rand()) % 66;
-            cout << rand_i << "\n";
+            //cout << "No hay palabra" << "\n";
         }
         while (rand_i == 0);
     }
     rand_j=(random_value_j+10000*rand()) % (max_j[rand_i]); // Máximo 150
-    cout << rand_i << "\n";
+    //cout << rand_j << "\n";
     if (rand_j == 0)
     {
+        //cout << rand_j << "\n";
         do
         {
             rand_j=(random_value_j+10000*rand()) % (max_j[rand_i]);
+            //cout << rand_j << "\n";
         }
         while (rand_j == 0);
     }
-    cout << rand_j << "\n";
     rand_k=(random_value_k+10000*rand()) % (max_k[rand_i][rand_j]); // Máximo 176
-    cout << rand_k << "\n";
+    //cout << rand_k << "\n";
     if (rand_k == 0)
     {
+        //cout << rand_k << "\n";
         do
         {  
             rand_k=(random_value_k+10000*rand()) % (max_k[rand_i][rand_j]);
+            //cout << rand_k << "\n";
         }
         while (rand_k == 0);
     }
-    cout << rand_k << "\n";
+    
       
-  
+ 
 
    // Prueba de recuperación
    int retr_i=rand_i;
@@ -236,29 +263,29 @@ int main(){
       //rapidxml::xml_attribute<> *pAttr = pBook->first_attribute("n");
       if(retr_i == i)
       {
-         cout << pBook->first_attribute("n")->value() << " ";
-         j=0;
-         for(rapidxml::xml_node<> *pChap=pBook->first_node("c"); pChap; pChap=pChap->next_sibling())
-         {
+        cout << pBook->first_attribute("n")->value() << " "; // Salida de Libro
+        j=0;
+        for(rapidxml::xml_node<> *pChap=pBook->first_node("c"); pChap; pChap=pChap->next_sibling())
+        {
             j++;
             if(retr_j == j)
             {
-               cout << "Capítulo " << pChap->first_attribute("n")->value() << " ";
+               cout << "Capítulo " << pChap->first_attribute("n")->value() << " "; // Salida de Capítulo
                k=0;
                for(rapidxml::xml_node<> *pVerse=pChap->first_node("v"); pVerse; pVerse=pVerse->next_sibling())
                {
-                  k++;
-                  if(retr_k == k)
-                  {
-                     cout << "Versículo " << pVerse->first_attribute("n")->value() << ":\n \n";
-                     cout << wrap(pVerse->value(),31) <<"\n"; 
-                     flag=1;
-                  }
+                    k++;
+                    if(retr_k == k)
+                    {
+                        cout << "Versículo " << pVerse->first_attribute("n")->value() << ":\n \n"; // Salida de Versículo
+                        cout << wrap(pVerse->value(),31) <<"\n"; // Salida del Texto
+                        flag=1;
+                    }
                }
                k=0;
             }   
-         }
-         j=0;
+        }
+        j=0;
       }     
    }
 
